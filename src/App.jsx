@@ -1,4 +1,5 @@
-import Login from './pages/Login.jsx' 
+import { Outlet } from 'react-router-dom';
+import { UsuariosContextProvider } from './context/UsuariosContext';
 
 import './App.css'
 
@@ -6,7 +7,14 @@ function App() {
 
   return (
     <>
-    <Login></Login>
+    
+    <UsuariosContextProvider>
+      
+      <Outlet> </Outlet>
+      
+    </UsuariosContextProvider>
+  
+  
     </>
   )
 }
