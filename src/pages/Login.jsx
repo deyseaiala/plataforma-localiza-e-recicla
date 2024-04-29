@@ -1,37 +1,49 @@
-import {Button} from '@mui/material';
-import {useForm} from 'react-hook-form'
+
+import { useContext, useState } from "react";
+import { UsuariosContext } from "../context/UsuariosContext";
+
 
 function Login() {
 
-    const { register, handleSubmit 
-    } = useForm()
+  const {login} = useContext(UsuariosContext)
+
+  const [usuario, setUsuario] = useState({ email: "", password: ""})
+
+    async function fazerLogin(){
+      await login(usuario.email,usuario.senha)
+    }
   
 
-return(
+
+  return(
     <div>
         <h1>Login</h1>
-        <form onSubmit = {handleSubmit(fazerLogin)}>  
-        <label htmlFor="email"> Email</label>
-          <input type="text" {...register("email", {
-            required: "Por favor escreva seu email.",
-            maxLength: {value: 30, message: "Máximo de 30 caracteres neste campo."}
-          })} />
-          {errors?.email && <p>{errors.email?.message}</p>}
+        <form>  
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          value={usuario.email}
+          placeholder="Digite seu email"
+          onChange={(evento) =>
+          setUsuario({ ...usuario, email: evento.target.value })
+          } />
 
-          <label htmlFor="senha"> Senha</label>
-          <input type="text" {...register("senha", {
-            required: "Por favor escreva sua senha.",
-            minLength: {value: 8, message: "A senha deve ter no mínimo 8 dígitos."}
-          })} />
-          {errors?.email && <p>{errors.email?.message}</p>}
+        <label htmlFor="senha">Senha:</label>
+        <input
+          type="password"
+          value={usuario.senha}
+          placeholder="Digite a senha do usuário"
+          onChange={(evento) =>
+            setUsuario({ ...usuario, senha: evento.target.value })
+          } />
+          
+
+
+    <button onClick={() => fazerLogin()}>Entrar</button>
         
-
-
-        <Button variant="outlined">Login</Button>
-        <Button variant="outlined">Cadastre-se</Button>
         </form>
     </div>
-)
+  )
 
 }
 
