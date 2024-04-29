@@ -19,8 +19,7 @@ export const UsuariosContextProvider = ({children}) => {
               usuarioEncontrado = true
               if(usuario.senha == senha){
                 localStorage.setItem("usuarioLogado", true)
-                //window.location.href = "/"
-                console.log("usuario logado")
+                window.location.href = "/"
                 return
               }
     

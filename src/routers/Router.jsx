@@ -1,4 +1,4 @@
-import {createBrowserRouter} from 'react-router-dom';
+import {createBrowserRouter, Navigate } from 'react-router-dom';
 import Login from '../pages/Login.jsx';
 import ListaLocaisColeta from '../pages/ListaLocaisColeta.jsx';
 import CadastroNovoUsuario from '../pages/CadastroNovoUsuario.jsx';
@@ -46,3 +46,5 @@ const routers = createBrowserRouter ([
         ]
     }
 ])
+
+export default routers;
