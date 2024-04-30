@@ -38,9 +38,32 @@ export const UsuariosContextProvider = ({children}) => {
         }
       }
 
+      function getUsuarios(){
+        fetch("http://localhost:3000/usuariosCadastrados")
+        .then(response => response.json())
+        .then(dados => setUsuarios(dados))
+        .catch(erro => console.log(erro))
+      }
+    
+      function enviarParaApi(dados) {
+        fetch("http://localhost:3000/usuariosCadastrados", {
+          method: "POST",
+          body: JSON.stringify(dados),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .then(() => { 
+          alert("Usuário cadastrado com sucesso!")
+          getUsuarios();
+        })
+        .catch(() => alert("Erro ao cadastrar usuário!"))
+      }
+        
+
 
     return (
-        <UsuariosContext.Provider value={{usuarios, setUsuarios, login}}>
+        <UsuariosContext.Provider value={{usuarios, setUsuarios, login, enviarParaApi}}>
             {children}
         </UsuariosContext.Provider>
     )

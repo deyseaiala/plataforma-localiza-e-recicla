@@ -1,17 +1,17 @@
-
+import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UsuariosContext } from "../context/UsuariosContext";
 
 
 function Login() {
 
-  const {login} = useContext(UsuariosContext)
+  const {login} = useContext(UsuariosContext);
 
-  const [usuario, setUsuario] = useState({ email: "", password: ""})
+  const [usuario, setUsuario] = useState({ email: "", password: ""});
 
-    async function fazerLogin(){
-      await login(usuario.email,usuario.senha)
-    }
+  async function fazerLogin(){
+    await login(usuario.email,usuario.senha)
+  }
   
 
 
@@ -40,6 +40,7 @@ function Login() {
 
 
     <button onClick={() => fazerLogin()}>Entrar</button>
+    <Link to="/cadastro-novo-usuario"><button type="button"> Cadastre-se </button></Link>
         
         </form>
     </div>

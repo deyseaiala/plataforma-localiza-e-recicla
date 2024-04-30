@@ -1,67 +1,65 @@
-
 {
-    "usuariosCadastrados":[
-       {"id": 1,
-        "nome": "Isabelle Vitoria",
-       "sexo": "Feminino",
-       "CPF": "391.995.430-32",
-       "dataNascimento": "29/10/2016",
-       "email": "isavitoria@email.com",
-       "senha": "isa446578",
-       "endereco": ""
-       },
-   
-       {"id": 2,
-        "nome": "Ryan Fabricio",
-       "sexo": "Masculino",
-       "CPF": "094.531.680-17",
-       "dataNascimento": "05/07/1990",
-       "email": "ryanfabricio@email.com",
-       "senha": "26121990",
-       "endereco": ""
-       },
-       
-       {"id": 3,
-        "nome": "Miguel Vieira",
-       "sexo": "Masculino",
-       "CPF": "442.531.860-92",
-       "dataNascimento": "22/11/2021",
-       "email": "isavitoria@email.com",
-       "senha": "viera391",
-       "endereco": ""
-       },
-       
-       {"id": 4,
-        "nome": "Edite Rosa",
-       "sexo": "Feminino",
-       "CPF": "417.864.680-00",
-       "dataNascimento": "20/10/1965",
-       "email": "edite2008@email.com",
-       "senha": "18012000",
-       "endereco": ""
-       },
-   
-       {"id": 5,
-        "nome": "Eduardo Martins",
-       "sexo": "Masculino",
-       "CPF": "391.466.900-42",
-       "dataNascimento": "25/10/2000",
-       "email": "edumartins@gamil.com",
-       "senha": "78453612",
-       "endereco": ""
-       },
-
-       {"id": 6,
-        "nome": "Leonardo Golcalves",
-       "sexo": "Masculino",
-       "CPF": "018.986.310-26",
-       "dataNascimento": "18/01/1999",
-       "email": "isavitoria@email.com",
-       "senha": "5958leog",
-       "endereco": ""
-       }
-   ]
-
+  "usuariosCadastrados": [
+    {
+      "id": 1,
+      "nome": "Isabelle Vitoria",
+      "sexo": "Feminino",
+      "CPF": "391.995.430-32",
+      "dataNascimento": "29/10/2016",
+      "email": "isavitoria@email.com",
+      "senha": "isa446578",
+      "endereco": ""
+    },
+    {
+      "id": 2,
+      "nome": "Ryan Fabricio",
+      "sexo": "Masculino",
+      "CPF": "094.531.680-17",
+      "dataNascimento": "05/07/1990",
+      "email": "ryanfabricio@email.com",
+      "senha": "26121990",
+      "endereco": ""
+    },
+    {
+      "id": 3,
+      "nome": "Miguel Vieira",
+      "sexo": "Masculino",
+      "CPF": "442.531.860-92",
+      "dataNascimento": "22/11/2021",
+      "email": "isavitoria@email.com",
+      "senha": "viera391",
+      "endereco": ""
+    },
+    {
+      "id": 4,
+      "nome": "Edite Rosa",
+      "sexo": "Feminino",
+      "CPF": "417.864.680-00",
+      "dataNascimento": "20/10/1965",
+      "email": "edite2008@email.com",
+      "senha": "18012000",
+      "endereco": ""
+    },
+    {
+      "id": 5,
+      "nome": "Eduardo Martins",
+      "sexo": "Masculino",
+      "CPF": "391.466.900-42",
+      "dataNascimento": "25/10/2000",
+      "email": "edumartins@gamil.com",
+      "senha": "78453612",
+      "endereco": ""
+    },
+    {
+      "id": 6,
+      "nome": "Leonardo Golcalves",
+      "sexo": "Masculino",
+      "CPF": "018.986.310-26",
+      "dataNascimento": "18/01/1999",
+      "email": "isavitoria@email.com",
+      "senha": "5958leog",
+      "endereco": ""
     }
-   
     
+  ]
+}
