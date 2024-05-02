@@ -1,10 +1,12 @@
 import {useForm} from 'react-hook-form'
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { UsuariosContext } from "../context/UsuariosContext";
 
 function CadastroNovoUsuario() {
 
+  //const {usuarios} = useContext(UsuariosContext);
+  //const {setUsuarios} = useContext(UsuariosContext);
   const {enviarParaApi} = useContext(UsuariosContext);
   const navigate = useNavigate();
   const {register, handleSubmit, setValue, getValues, formState: {errors}} = useForm({defaultValues: {
@@ -12,11 +14,30 @@ function CadastroNovoUsuario() {
       email: "",
     }})
 
+  //const [usuario, setUsuario] = useState({cpf: ""})
+  //const {getUsuarios} = useContext(UsuariosContext)
+
+  async function consultarCpfUnico(){
+    let cpf = getValues('cpf');
+
+    try {
+      const response = await fetch("http://localhost:3000/usuariosCadastrados");
+      const dados = await response.json();
+    
+      dados.map(usuario => {
+        if(usuario.cpf == cpf){
+          alert("Já existe um usuário cadastrado com este mesmo CPF. Por favor, insira outro CPF.");
+          setValue('cpf', "");
+      }
+    })
+   } catch {erro => console.log(erro)}
+  }
+
+
     const criarNovoUsuario = async (dados) => {
       console.log(dados)
       enviarParaApi(dados);
       navigate("/login");
-      
     }
 
   
@@ -58,7 +79,8 @@ function CadastroNovoUsuario() {
             <label htmlFor="cpf"> CPF:</label>
             <input type="text" name='cpf'{...register("cpf", {
               required: "Campo obrigatório",
-              maxLength: {value: 11, message: "Máximo de 11 caracteres neste campo."}
+              maxLength: {value: 11, message: "Máximo de 11 caracteres neste campo."},
+              onBlur: () => consultarCpfUnico()
             })} />
             {errors?.cpf && <p>{errors.cpf?.message}</p>}
 
@@ -122,5 +144,3 @@ function CadastroNovoUsuario() {
   }
   
   export default CadastroNovoUsuario;
-
-  

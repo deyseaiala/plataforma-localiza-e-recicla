@@ -6,18 +6,18 @@ export const UsuariosContext = createContext();
 export const UsuariosContextProvider = ({children}) => {
     const [usuarios, setUsuarios] = useState([]);
 
-    async function login(email,senha){
+async function login(email,senha){
 
-        try {
-           const response = await fetch("http://localhost:3000/usuariosCadastrados");
-           const dados = await response.json();
+   try {
+      const response = await fetch("http://localhost:3000/usuariosCadastrados");
+      const dados = await response.json();
 
-          let usuarioEncontrado = false;
+      let usuarioEncontrado = false;
 
-          dados.map(usuario => {
-            if(usuario.email == email){
-              usuarioEncontrado = true
-              if(usuario.senha == senha){
+      dados.map(usuario => {
+        if(usuario.email == email){
+            usuarioEncontrado = true
+            if(usuario.senha == senha){
                 localStorage.setItem("usuarioLogado", true)
                 window.location.href = "/"
                 return
@@ -53,17 +53,16 @@ export const UsuariosContextProvider = ({children}) => {
             'Content-Type': 'application/json',
           },
         })
-        .then(() => { 
+        .then(() => {
           alert("Usuário cadastrado com sucesso!")
           getUsuarios();
         })
         .catch(() => alert("Erro ao cadastrar usuário!"))
       }
-        
 
 
     return (
-        <UsuariosContext.Provider value={{usuarios, setUsuarios, login, enviarParaApi}}>
+        <UsuariosContext.Provider value={{usuarios, setUsuarios, login, enviarParaApi, getUsuarios}}>
             {children}
         </UsuariosContext.Provider>
     )
