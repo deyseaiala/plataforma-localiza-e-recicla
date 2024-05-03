@@ -5,6 +5,7 @@ export const UsuariosContext = createContext();
 
 export const UsuariosContextProvider = ({children}) => {
     const [usuarios, setUsuarios] = useState([]);
+    const [locais, setLocais] = useState([]);
 
 async function login(email,senha){
 
@@ -60,9 +61,36 @@ async function login(email,senha){
         .catch(() => alert("Erro ao cadastrar usuário!"))
       }
 
+      function getLocais(){
+        fetch("http://localhost:3000/locaisColeta")
+        .then(response => response.json())
+        .then(dados => setLocais(dados))
+        .catch(erro => console.log(erro))
+      }
+
+      function enviarLocalApi(dados) {
+        fetch("http://localhost:3000/locaisColeta", {
+          method: "POST",
+          body: JSON.stringify(dados),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .then(() => {
+          alert("Novo ponto de coleta cadastrado com sucesso!")
+          getLocais();
+        })
+        .catch(() => alert("Erro ao cadastrar ponto de coleta!"))
+      }
+
+
+
+
+     
+      
 
     return (
-        <UsuariosContext.Provider value={{usuarios, setUsuarios, login, enviarParaApi, getUsuarios}}>
+        <UsuariosContext.Provider value={{usuarios, setUsuarios, login, enviarParaApi, getUsuarios, locais, setLocais, getLocais, enviarLocalApi}}>
             {children}
         </UsuariosContext.Provider>
     )

@@ -60,6 +60,28 @@
       "senha": "5958leog",
       "endereco": ""
     }
-    
+  ],
+  "locaisColeta": [
+    {
+      "id": "1",
+      "nomeLocal": "ponto coleta",
+      "descricao": "",
+      "cep": "88060284",
+      "logradouro": "Servidão Antonia Castro Garcia",
+      "numero": "",
+      "complemento": "",
+      "bairro": "São João do Rio Vermelho",
+      "estado": "SC",
+      "cidade": "Florianópolis",
+      "longitude": "",
+      "latitude": "",
+      "vidro": false,
+      "metal": true,
+      "papel": false,
+      "plastico": false,
+      "organico": false,
+      "baterias": false,
+      "outros": false
+    }
   ]
 }

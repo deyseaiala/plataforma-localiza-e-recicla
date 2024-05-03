@@ -132,7 +132,7 @@ function CadastroNovoUsuario() {
             <input type="text" name='estado'{...register("estado")} />
             {errors?.estado && <p>{errors.estado?.message}</p>}
 
-            <label htmlFor="cidade"> localidade:</label>
+            <label htmlFor="cidade"> Cidade:</label>
             <input type="text" name='cidade'{...register("cidade")} />
             {errors?.cidade && <p>{errors.cidade?.message}</p>}
 
