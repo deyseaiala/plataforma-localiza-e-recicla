@@ -20,6 +20,7 @@ async function login(email,senha){
             usuarioEncontrado = true
             if(usuario.senha == senha){
                 localStorage.setItem("usuarioLogado", true)
+                localStorage.setItem("id", usuario.id)
                 window.location.href = "/"
                 return
               }
@@ -84,13 +85,18 @@ async function login(email,senha){
       }
 
 
-
+      function getUsuarioPorId(id){
+        fetch("http://localhost:3000/usuariosCadastrados/" + id)
+        .then(response => response.json())
+        .then(dados => setUsuarios(dados))
+        .catch(erro => console.log(erro))
+      }
 
      
       
 
     return (
-        <UsuariosContext.Provider value={{usuarios, setUsuarios, login, enviarParaApi, getUsuarios, locais, setLocais, getLocais, enviarLocalApi}}>
+        <UsuariosContext.Provider value={{usuarios, setUsuarios, login, enviarParaApi, getUsuarios, locais, setLocais, getLocais, enviarLocalApi, getUsuarioPorId}}>
             {children}
         </UsuariosContext.Provider>
     )

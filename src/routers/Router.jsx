@@ -5,6 +5,8 @@ import CadastroNovoUsuario from '../pages/CadastroNovoUsuario.jsx';
 import App from '../App.jsx';
 import Dashboard from '../pages/Dashboard.jsx';
 import CadastroLocaisColeta from '../pages/CadastroLocaisColeta.jsx'
+import EditarLista from '../pages/EditarLista.jsx';
+import ListaLocaisGeral from '../pages/ListaLocaisGeral.jsx';
 
 let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado")) || false;
 
@@ -20,8 +22,8 @@ const routers = createBrowserRouter ([
 
     },
     {
-        path: "/lista-locais-coleta",
-        element: <ListaLocaisColeta />
+        path: "/lista-locais-geral",
+        element: <ListaLocaisGeral />
 
     },
     {
@@ -41,6 +43,11 @@ const routers = createBrowserRouter ([
             {
                 path: "/cadastro-locais-coleta",
                 element: <CadastroLocaisColeta />
+
+            },
+            {
+                path: "/editar-lista/:id",
+                element: <EditarLista />
 
             },
         ]

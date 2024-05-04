@@ -5,17 +5,12 @@ import { UsuariosContext } from "../context/UsuariosContext";
 
 function CadastroNovoUsuario() {
 
-  //const {usuarios} = useContext(UsuariosContext);
-  //const {setUsuarios} = useContext(UsuariosContext);
   const {enviarParaApi} = useContext(UsuariosContext);
   const navigate = useNavigate();
   const {register, handleSubmit, setValue, getValues, formState: {errors}} = useForm({defaultValues: {
       nome: "",
       email: "",
     }})
-
-  //const [usuario, setUsuario] = useState({cpf: ""})
-  //const {getUsuarios} = useContext(UsuariosContext)
 
   async function consultarCpfUnico(){
     let cpf = getValues('cpf');
@@ -56,6 +51,7 @@ function CadastroNovoUsuario() {
         .catch(error => console.log(error))
       }
     }
+
 
     return ( 
       <div>

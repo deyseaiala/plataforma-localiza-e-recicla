@@ -1,12 +1,23 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UsuariosContext } from "../context/UsuariosContext";
+import { useEffect } from "react";
 
 function CadastroLocaisColeta() {
 
   const {register, handleSubmit, getValues, setValue, formState: {errors}} = useForm();
   const {enviarLocalApi} = useContext(UsuariosContext);
-  //const {buscarCep} = useContext(UsuariosContext)
+  //const {getUsuarios} = useContext(UsuariosContext);
+
+
+  useEffect(() => {
+    let idUsuario = JSON.parse(localStorage.getItem("id"))
+    
+    if(!!idUsuario){
+        setValue('id', idUsuario)}
+
+  }, [])
+  
   
 
    async function criarNovoLocal(dados){

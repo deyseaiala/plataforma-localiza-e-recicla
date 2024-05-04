@@ -34,7 +34,7 @@ function Login() {
           value={usuario.senha}
           placeholder="Digite a senha do usuário"
           onChange={(evento) =>
-            setUsuario({ ...usuario, senha: evento.target.value })
+          setUsuario({ ...usuario, senha: evento.target.value })
           } />
           
 
