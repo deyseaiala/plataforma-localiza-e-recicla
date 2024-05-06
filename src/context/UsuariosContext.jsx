@@ -69,13 +69,23 @@ async function login(email,senha){
         .catch(erro => console.log(erro))
       }
 
+      function criarIdparaLocal(){
+        return Math.floor(Math.random() * 100) + 6;
+        
+       }
+
+
       function enviarLocalApi(dados) {
+
+        const novoLocal = {...dados, idLocal: criarIdparaLocal()}
+
         fetch("http://localhost:3000/locaisColeta", {
           method: "POST",
-          body: JSON.stringify(dados),
+          body: JSON.stringify(novoLocal),
           headers: {
             'Content-Type': 'application/json',
           },
+          
         })
         .then(() => {
           alert("Novo ponto de coleta cadastrado com sucesso!")

@@ -1,12 +1,13 @@
 import {createBrowserRouter, Navigate } from 'react-router-dom';
 import Login from '../pages/Login.jsx';
-import ListaLocaisColeta from '../pages/ListaLocaisColeta.jsx';
 import CadastroNovoUsuario from '../pages/CadastroNovoUsuario.jsx';
 import App from '../App.jsx';
 import Dashboard from '../pages/Dashboard.jsx';
 import CadastroLocaisColeta from '../pages/CadastroLocaisColeta.jsx'
 import EditarLista from '../pages/EditarLista.jsx';
 import ListaLocaisGeral from '../pages/ListaLocaisGeral.jsx';
+import ListaLocaisUsuario from '../pages/ListaLocaisUsuario.jsx';
+
 
 let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado")) || false;
 
@@ -46,10 +47,15 @@ const routers = createBrowserRouter ([
 
             },
             {
-                path: "/editar-lista/:id",
+                path: "/editar-lista/:idUsuario",
                 element: <EditarLista />
 
             },
+            {
+                path: "/lista-locais-usuario/:idUsuario",
+                element: <ListaLocaisUsuario />
+
+            }
         ]
     }
 ])

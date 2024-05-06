@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { useForm } from "react-hook-form";
 
 
 
 function EditarLista() {
 
-    const {register, handleSubmit, setValue} =useForm();
+    const {register, handleSubmit, setValue, formState: {errors}} =useForm();
     const {id} = useParams();
     
     

@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UsuariosContext } from "../context/UsuariosContext";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CadastroLocaisColeta() {
 
+  const navigate = useNavigate();
   const {register, handleSubmit, getValues, setValue, formState: {errors}} = useForm();
   const {enviarLocalApi} = useContext(UsuariosContext);
   //const {getUsuarios} = useContext(UsuariosContext);
@@ -14,17 +16,15 @@ function CadastroLocaisColeta() {
     let idUsuario = JSON.parse(localStorage.getItem("id"))
     
     if(!!idUsuario){
-        setValue('id', idUsuario)}
+        setValue('idUsuario', idUsuario)}
 
   }, [])
   
-  
+   
 
    async function criarNovoLocal(dados){
-    console.log(dados)
     enviarLocalApi(dados);
-
-    //navigate("/login");
+    navigate("/lista-locais-geral");
   }
  
   const buscarCep = () => {
@@ -63,8 +63,8 @@ function CadastroLocaisColeta() {
             })} />
             {errors?.descricao && <p>{errors.descricao?.message}</p>}
 
-            <label htmlFor="id"> Identificador de usuário:</label>
-            <input type="text" name='id'{...register("id", {
+            <label htmlFor="idUsuario"> Identificador de usuário:</label>
+            <input type="text" name='idUsuario'{...register("idUsuario", {
               required: "Campo obrigatório"}
             )} />
             {errors?.id && <p>{errors.id?.message}</p>}
