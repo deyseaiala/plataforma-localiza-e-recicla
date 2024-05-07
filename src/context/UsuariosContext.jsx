@@ -77,7 +77,7 @@ async function login(email,senha){
 
       function enviarLocalApi(dados) {
 
-        const novoLocal = {...dados, idLocal: criarIdparaLocal()}
+        const novoLocal = {...dados, id: criarIdparaLocal()}
 
         fetch("http://localhost:3000/locaisColeta", {
           method: "POST",
@@ -95,18 +95,11 @@ async function login(email,senha){
       }
 
 
-      function getUsuarioPorId(id){
-        fetch("http://localhost:3000/usuariosCadastrados/" + id)
-        .then(response => response.json())
-        .then(dados => setUsuarios(dados))
-        .catch(erro => console.log(erro))
-      }
-
      
       
 
     return (
-        <UsuariosContext.Provider value={{usuarios, setUsuarios, login, enviarParaApi, getUsuarios, locais, setLocais, getLocais, enviarLocalApi, getUsuarioPorId}}>
+        <UsuariosContext.Provider value={{usuarios, total: usuarios.length, setUsuarios, login, enviarParaApi, getUsuarios, locais, setLocais, getLocais, enviarLocalApi}}>
             {children}
         </UsuariosContext.Provider>
     )

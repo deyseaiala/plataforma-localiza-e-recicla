@@ -1,10 +1,16 @@
 import {Link} from 'react-router-dom';
-//import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 function Header() {
   
-  //let { idUsuario } = useParams();
   let idUsuario = JSON.parse(localStorage.getItem("id"))
+  const { navigate } = useNavigate()
+
+  function logout(){
+    localStorage.clear()
+    navigate("/login")
+  }
 
     return (
       <div>
@@ -17,6 +23,7 @@ function Header() {
         <Link to="/lista-locais-geral" >Locais de coleta geral</Link>
         <Link to="/cadastro-locais-coleta" >Cadastre um local de coleta</Link>
         <Link to={`/lista-locais-usuario/${idUsuario}`} >Meus locais</Link>
+        <button onClick={() => logout()}>Sair</button>
         
         </div>
        </nav>
