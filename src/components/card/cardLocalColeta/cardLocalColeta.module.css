@@ -1,0 +1,17 @@
+.conteiner{
+    background-color: white;
+    width: 350px;
+    height: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: solid;
+    border-color: #F28C2E;
+    color: #203F47;
+}
+
+
+

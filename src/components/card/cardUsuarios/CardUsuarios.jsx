@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { UsuariosContext } from "../../../context/UsuariosContext";
+import styles from "./cardUsuarios.module.css"
 
 function CardUsuarios(){
     const {getUsuarios} = useContext(UsuariosContext)
@@ -11,12 +12,17 @@ function CardUsuarios(){
 
 
     return(
-        <div>
+        <div className={styles.conteiner}>
 
-            <h1>Usuários ativos: {total}</h1>
-           
+        <div className={styles.total}>
+            <span >Pontos de coleta</span>
+            <img width="30" height="30" src="src\assets\user.png"/>
 
         </div>
+            <span className={styles.valor} >{total}</span>
+        
+
+        </div>    
     )
 
 }
