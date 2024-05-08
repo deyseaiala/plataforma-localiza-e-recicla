@@ -9,7 +9,7 @@ function Header() {
 
   function logout(){
     localStorage.clear()
-    navigate("/login")
+    navigate("/login");
   }
 
     return (
@@ -23,7 +23,7 @@ function Header() {
         <Link to="/lista-locais-geral" >Locais de coleta geral</Link>
         <Link to="/cadastro-locais-coleta" >Cadastre um local de coleta</Link>
         <Link to={`/lista-locais-usuario/${idUsuario}`} >Meus locais</Link>
-        <button onClick={() => logout()}>Sair</button>
+        <button onClick={() => logout()}>SAIR</button>
         
         </div>
        </nav>

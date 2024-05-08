@@ -70,7 +70,7 @@ async function login(email,senha){
       }
 
       function criarIdparaLocal(){
-        return Math.floor(Math.random() * 100) + 6;
+        return (Math.floor(Math.random() * 100) + 6).toString()
         
        }
 
@@ -99,7 +99,7 @@ async function login(email,senha){
       
 
     return (
-        <UsuariosContext.Provider value={{usuarios, total: usuarios.length, setUsuarios, login, enviarParaApi, getUsuarios, locais, setLocais, getLocais, enviarLocalApi}}>
+        <UsuariosContext.Provider value={{usuarios, total: usuarios.length, setUsuarios, login, enviarParaApi, getUsuarios, locais, totalLocais: locais.length, setLocais, getLocais, enviarLocalApi}}>
             {children}
         </UsuariosContext.Provider>
     )

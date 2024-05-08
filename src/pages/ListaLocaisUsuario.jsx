@@ -11,7 +11,7 @@ function ListaLocaisUsuario(){
     
    
     let {idUsuario} = useParams()
-    idUsuario = JSON.parse(localStorage.getItem("id"))
+    //idUsuario = JSON.parse(localStorage.getItem("id"))
     
 
     const [local, setLocal] = useState();
@@ -21,17 +21,19 @@ function ListaLocaisUsuario(){
         .then(response => response.json())
         .then(dados => setLocal(dados))
         .catch(erro => console.log(erro))
+
     }, [] )
 
     
 
     const excluir = async (id) => {
         try {
-          const response = await fetch(`http://localhost:3000/locaisColeta?id=${id}`, {
+          const response = await fetch(`http://localhost:3000/locaisColeta/${id}`, {
             method: "DELETE",
           });
           if (response.ok) {
             setLocal(local.filter(local => local.id !== id));
+            alert("Local de coleta excluído com sucesso!");
           } else {
             alert("Erro ao remover local de coleta!");
           }

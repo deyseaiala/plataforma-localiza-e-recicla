@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UsuariosContext } from "../context/UsuariosContext";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 
 function CadastroLocaisColeta() {
 
@@ -10,9 +11,11 @@ function CadastroLocaisColeta() {
   const {register, handleSubmit, getValues, setValue, formState: {errors}} = useForm();
   const {enviarLocalApi} = useContext(UsuariosContext);
   //const {getUsuarios} = useContext(UsuariosContext);
+  
 
 
   useEffect(() => {
+    
     let idUsuario = JSON.parse(localStorage.getItem("id"))
     
     if(!!idUsuario){
@@ -24,7 +27,7 @@ function CadastroLocaisColeta() {
 
    async function criarNovoLocal(dados){
     enviarLocalApi(dados);
-    navigate("/lista-locais-geral");
+    navigate("/");
   }
  
   const buscarCep = () => {
@@ -100,14 +103,14 @@ function CadastroLocaisColeta() {
             <input type="text" name='cidade'{...register("cidade")} />
             {errors?.cidade && <p>{errors.cidade?.message}</p>}
 
-            <label htmlFor="longitude"> Longitude:</label>
-            <input type="text" name='longitude'{...register("longitude")} />
-            {errors?.longitude && <p>{errors.longitude?.message}</p>}
-
             <label htmlFor="latitude"> Latitude:</label>
             <input type="text" name='latitude'{...register("latitude")} />
             {errors?.latitude && <p>{errors.latitude?.message}</p>}
 
+            <label htmlFor="longitude"> Longitude:</label>
+            <input type="text" name='longitude'{...register("longitude")} />
+            {errors?.longitude && <p>{errors.longitude?.message}</p>}
+            
             <div>
             <span>Selecione os resíduos aceitos neste local de coleta:</span>
             <label htmlFor="vidro"> Vidro</label>

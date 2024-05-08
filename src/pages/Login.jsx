@@ -9,7 +9,8 @@ function Login() {
 
   const [usuario, setUsuario] = useState({ email: "", password: ""});
 
-  async function fazerLogin(){
+  async function fazerLogin(e){
+    e.preventDefault()
     await login(usuario.email,usuario.senha)
   }
   
@@ -39,7 +40,7 @@ function Login() {
           
 
 
-    <button onClick={() => fazerLogin()}>Entrar</button>
+    <button onClick={(e) => fazerLogin(e)}>Entrar</button>
     <Link to="/cadastro-novo-usuario"><button type="button"> Cadastre-se </button></Link>
         
         </form>
