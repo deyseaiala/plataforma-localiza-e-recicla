@@ -6,7 +6,7 @@ function CardLocalColeta({locaisColeta}){
 
     return (
         <div className={styles.conteiner}>
-            <img width="48" height="48" src="src\assets\reciclagem.png" alt="marker--v1"/>
+            <img width="48" height="48" src="src\assets\reciclagem.png" alt="marker--v1"></img>
             <h3>{locaisColeta.nomeLocal}</h3>
             <p>{locaisColeta.descricao}</p>
             <div>

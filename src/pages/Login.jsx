@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UsuariosContext } from "../context/UsuariosContext";
+import styles from "./login.module.css"
 
 
 function Login() {
@@ -17,9 +18,17 @@ function Login() {
 
 
   return(
-    <div>
-        <h1>Login</h1>
+    <div className={styles.conteiner}>
+      <div className={styles.imagem}>
+      
+      </div>
+      <div className={styles.loginForm}>
+     <div className={styles.logo}>
+      <img width="50" height="50" src="src\assets\reciclagemAzul.png" alt="marker--v1"></img>
+        <h1>RECICLA FLORIPA</h1>
+        </div>
         <form>  
+          <div className={styles.form}>
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -28,7 +37,9 @@ function Login() {
           onChange={(evento) =>
           setUsuario({ ...usuario, email: evento.target.value })
           } />
+          
 
+          
         <label htmlFor="senha">Senha:</label>
         <input
           type="password"
@@ -37,14 +48,14 @@ function Login() {
           onChange={(evento) =>
           setUsuario({ ...usuario, senha: evento.target.value })
           } />
-          
+          </div>
 
-
-    <button onClick={(e) => fazerLogin(e)}>Entrar</button>
-    <Link to="/cadastro-novo-usuario"><button type="button"> Cadastre-se </button></Link>
-        
+          <div className={styles.btn}>
+    <button onClick={(e) => fazerLogin(e)}>ENTRAR</button>
+    <Link to="/cadastro-novo-usuario"><button type="button"> CADASTRE-SE </button></Link>
+        </div>
         </form>
-    </div>
+    </div></div>
   )
 
 }

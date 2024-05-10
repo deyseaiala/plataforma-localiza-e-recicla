@@ -1,7 +1,8 @@
 import {useForm} from 'react-hook-form'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useContext} from "react";
 import { UsuariosContext } from "../context/UsuariosContext";
+import styles from "./cadastroNovoUsuario.module.css"
 
 function CadastroNovoUsuario() {
 
@@ -54,10 +55,21 @@ function CadastroNovoUsuario() {
 
 
     return ( 
-      <div>
-        <form onSubmit = {handleSubmit(criarNovoUsuario)} >
-          <h1>Cadastro de nova trilha</h1>
+      <div className={styles.conteiner}>
+        <div className={styles.imagem}>
+    
+      </div>
+
+
+      <div className={styles.cadastroForm}>
+
+    <div className={styles.logo}>
+          <img width="50" height="50" src="src\assets\reciclagemAzul.png" alt="marker--v1"></img>
+            <h1>RECICLA FLORIPA</h1>
+            </div>
         
+        <form onSubmit = {handleSubmit(criarNovoUsuario)} >
+        <div className={styles.formulario}>    
             <label htmlFor="nome"> Nome:</label>
             <input type="text" name='nome'{...register("nome", {
               required: "Campo obrigatório",
@@ -71,7 +83,9 @@ function CadastroNovoUsuario() {
               <option value="Masculino"> Masculino </option>
               </select>
             {errors?.sexo && <p>{errors.sexo?.message}</p>}
+            
 
+            
             <label htmlFor="cpf"> CPF:</label>
             <input type="text" name='cpf'{...register("cpf", {
               required: "Campo obrigatório",
@@ -85,7 +99,9 @@ function CadastroNovoUsuario() {
               required: "Campo obrigatório"
             })} />
             {errors?.dataNascimento && <p>{errors.dataNascimento?.message}</p>}
-
+            
+            
+            
             <label htmlFor="email"> Email:</label>
             <input type="email" name='email'{...register("email", {
               required: "Campo obrigatório",
@@ -99,18 +115,23 @@ function CadastroNovoUsuario() {
               maxLength: {value: 60, message: "Máximo de 60 caracteres neste campo."}
             })} />
             {errors?.senha && <p>{errors.senha?.message}</p>}
+          
 
+            
             <label htmlFor="cep"> CEP:</label>
             <input type="text" name='cep'{...register("cep", {
               required: "Campo obrigatório",
               onBlur: () => buscarCep()
             })} />
             {errors?.cep && <p>{errors.cep?.message}</p>}
+            
 
             <label htmlFor="logradouro"> Logradouro:</label>
             <input type="text" name='logradouro'{...register("logradouro")} />
             {errors?.logradouro && <p>{errors.logradouro?.message}</p>}
+            
 
+            
             <label htmlFor="numero"> Número:</label>
             <input type="text" name='numero'{...register("numero")} />
             {errors?.numero && <p>{errors.numero?.message}</p>}
@@ -118,8 +139,9 @@ function CadastroNovoUsuario() {
             <label htmlFor="complemento"> Complemento:</label>
             <input type="text" name='complemento'{...register("complemento")} />
             {errors?.complemento && <p>{errors.complemento?.message}</p>}
+            
 
-
+            
             <label htmlFor="bairro"> Bairro:</label>
             <input type="text" name='bairro'{...register("bairro")} />
             {errors?.bairro && <p>{errors.bairro?.message}</p>}
@@ -127,15 +149,22 @@ function CadastroNovoUsuario() {
             <label htmlFor="estado"> UF:</label>
             <input type="text" name='estado'{...register("estado")} />
             {errors?.estado && <p>{errors.estado?.message}</p>}
+           
 
+            
             <label htmlFor="cidade"> Cidade:</label>
             <input type="text" name='cidade'{...register("cidade")} />
             {errors?.cidade && <p>{errors.cidade?.message}</p>}
+            </div>
 
-            <button type="submit">Enviar</button>
-
+            <div className={styles.btn}>
+            <button type="submit">ENVIAR</button>
+            <Link to="/login"><button type="button"> VOLTAR </button></Link>
+            </div>
           </form>
+          </div>
         </div>
+        
   );
   }
   

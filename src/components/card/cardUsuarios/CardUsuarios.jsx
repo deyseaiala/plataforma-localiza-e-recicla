@@ -15,7 +15,7 @@ function CardUsuarios(){
         <div className={styles.conteiner}>
 
         <div className={styles.total}>
-            <span >Pontos de coleta</span>
+            <span >Usuários ativos</span>
             <img width="30" height="30" src="src\assets\user.png"/>
 
         </div>

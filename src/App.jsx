@@ -8,16 +8,20 @@ import './App.css'
 function App() {
 
   return (
-    <>
+    <div className='conteiner'>
     
     <UsuariosContextProvider>
+      <div className="menu">
       <Header></Header>
+      </div>
+      <div className="corpo">
       <Outlet> </Outlet>
       <Footer></Footer>
+      </div>
     </UsuariosContextProvider>
   
   
-    </>
+    </div>
   )
 }
 

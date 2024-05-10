@@ -20,13 +20,13 @@
 
   button{
     height: 30px;
-    width: 100px;
+    width: 120px;
     color: #FFFFFF;
     background-color: #F28C2E;
     border: none;
     border-radius: 10px;
-    font-size: large;
-    font-weight: 600;
+    font-size: medium;
+    font-weight: 400;
     
   }
 
@@ -38,3 +38,4 @@
     cursor: pointer;
   }
  
+  

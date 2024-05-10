@@ -14,7 +14,7 @@ function ListagemLocais(){
     }, [])
 
     return (
-        <div>
+        <div className={styles.listagem}>
             
             {!!locais && locais.map((local,index) => (
       <CardLocalColeta locaisColeta={local} key={index} /> ))}

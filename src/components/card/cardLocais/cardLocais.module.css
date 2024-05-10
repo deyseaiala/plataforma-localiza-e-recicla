@@ -1,12 +1,13 @@
 .conteiner{
     width: 200px;
     height: 200px;
-    background-color: #8CAC41;
+    background-color: #40ACAE;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-   
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .total{

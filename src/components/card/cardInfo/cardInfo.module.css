@@ -1,10 +1,15 @@
 .conteiner{
-    width: 330px;
+    width: 400px;
     height: 200px;
-    background-color: #8CAC41;
+    background-color: #40ACAE;
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
-    padding-top: 20px;
-    
+    padding: 10px;
+    border-radius: 12px;
+}
+
+span{
+    width: 300px;
+    text-align: justify;
 }

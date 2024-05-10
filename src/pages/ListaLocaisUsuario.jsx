@@ -1,8 +1,9 @@
 
 import { useEffect, useState } from "react";
-import CardLocalColeta from "../components/card/cardLocalColeta/CardLocalColeta";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import styles from "./listaLocaisUsuario.module.css";
+import CardLocalColeta from "../components/card/cardLocalColeta/CardLocalColeta.jsx"
 
 
 
@@ -47,22 +48,24 @@ function ListaLocaisUsuario(){
 
 
     return(
-        <div>
+        <div className={styles.conteiner}>
             <h1>Meus locais de coleta cadastrados</h1>
-
+<div className={styles.card}>
             {!!local && local.map(meuLocal => (
 
         <div key={meuLocal.id}>
+          <div>
       <CardLocalColeta locaisColeta={meuLocal}  /> 
-
+      </div>
       <Link to={`/editar-lista/${idUsuario}`} > <button> Editar </button> </Link>
+              
         <button onClick={() => excluir(meuLocal.id)}>Excluir</button>
         </div> ))
        
     } 
 
 
-        </div>
+        </div></div>
     )
 }
 
