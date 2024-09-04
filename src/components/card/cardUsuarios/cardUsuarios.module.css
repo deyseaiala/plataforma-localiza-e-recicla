@@ -1,0 +1,23 @@
+.conteiner{
+    width: 200px;
+    height: 200px;
+    background-color: #40ACAE;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.total{
+    display:flex;
+    justify-content: space-around;
+    
+}
+
+.valor{
+    font-size: 6cap;
+    text-align: center;
+}
+

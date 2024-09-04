@@ -1,0 +1,26 @@
+
+.cards{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 30px;
+
+}
+
+.mapa{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    padding: 30px;
+    color: #203F47;
+    text-align: start;
+    background-color: #F3F2EE;
+
+}
+
+
+
