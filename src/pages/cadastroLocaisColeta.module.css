@@ -1,0 +1,46 @@
+.conteiner{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    
+}
+
+
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+input{
+    border-radius: 15px;
+    border-color: #40ACAE;
+    height: 30px;
+    width: 200px;
+
+}
+
+.checkbox input{
+    margin:0 12px 0 0;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    width: 50px;
+    height: 15px;
+    
+}
+
+h1{
+    color: #203F47;
+}
+
+@media (max-width: 480px) {
+    .conteiner{
+        height: 100em;
+    }
+  }

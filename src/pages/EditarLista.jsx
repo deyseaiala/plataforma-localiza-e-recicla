@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import styles from "./editarLista.module.css"
 
 
 
@@ -57,11 +58,12 @@ function EditarLista() {
 
     return(
 
-        <div>
-        <h1>Editar lista {id}</h1>
+        <div className={styles.conteiner}>
+        <h1>Edite seu local {id}</h1>
 
         <form onSubmit = {handleSubmit(salvarEdicao)} >
           
+          <div className={styles.form}>
           <label htmlFor="nomeLocal"> Nome do local de coleta:</label>
           <input type="text" name='nomeLocal'{...register("nomeLocal", {
             required: "Campo obrigatório"})} />
@@ -118,7 +120,7 @@ function EditarLista() {
           <input type="text" name='latitude'{...register("latitude")} />
           {errors?.latitude && <p>{errors.latitude?.message}</p>}
 
-          <div>
+          <div className={styles.checkbox}>
           <span>Selecione os resíduos aceitos neste local de coleta:</span>
           <label htmlFor="vidro"> Vidro</label>
           <input type="checkbox" name='vidro' placeholder="Vidro" {...register("vidro")} />
@@ -141,11 +143,13 @@ function EditarLista() {
           <label htmlFor="outros"> Outros</label>
           <input type="checkbox" name='outros'{...register("outros")} />
           </div>
+          </div>
           </form>
 
-
-        <button type="submit">Salvar</button>
-        <button >Excluir</button>
+        <div className={styles.btn}>
+        <button type="submit">SALVAR</button>
+        <button >EXCLUIR</button>
+        </div>
         
         </div>
     )

@@ -1,0 +1,30 @@
+.conteiner{
+    width: 250px;
+    height: 100%;
+    background-color: #203F47;
+    color: white;
+    
+}
+
+a{
+    color: white;
+    padding: 20px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px 120px 0px;
+}
+
+.link{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.button{
+    margin: 230px 0px 0px 30px;
+}
+

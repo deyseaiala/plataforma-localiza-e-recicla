@@ -5,7 +5,6 @@ import App from '../App.jsx';
 import Dashboard from '../pages/Dashboard.jsx';
 import CadastroLocaisColeta from '../pages/CadastroLocaisColeta.jsx'
 import EditarLista from '../pages/EditarLista.jsx';
-import ListaLocaisGeral from '../pages/ListaLocaisGeral.jsx';
 import ListaLocaisUsuario from '../pages/ListaLocaisUsuario.jsx';
 
 
@@ -20,11 +19,6 @@ const routers = createBrowserRouter ([
     {
         path: "/login",
         element: <Login />
-
-    },
-    {
-        path: "/lista-locais-geral",
-        element: <ListaLocaisGeral />
 
     },
     {
